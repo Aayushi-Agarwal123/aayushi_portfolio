@@ -13,7 +13,7 @@ import Footer from "./sections/Footer";
 
 import ScrollProgress from "./sections/ScrollProgress";
 import CursorGlow from "./sections/CursorGlow";
-import LoadingScreen from "./Sections/LoadingScreen";
+import LoadingScreen from "./sections/LoadingScreen";
 
 function App() {
 
