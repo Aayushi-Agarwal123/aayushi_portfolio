@@ -27,10 +27,7 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (loading) {
-    return <Loader />;
-  }
-
+ 
   return (
     <>
       <CursorGlow />
