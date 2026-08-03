@@ -17,7 +17,7 @@ import LoadingScreen from "./Sections/LoadingScreen";
 
 function App() {
 
-  const [loading, setLoading] = useState(true);
+ /* const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -25,7 +25,7 @@ function App() {
     }, 1800);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, []);*/
 
  
   return (
