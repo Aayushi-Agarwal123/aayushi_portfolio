@@ -1,10 +1,37 @@
+import { useEffect } from "react";
+
+
+import Navbar from "./components/Navbar";
+
+import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Skills from "./sections/Skills";
+import Projects from "./sections/Projects";
+import Experience from "./sections/Experience";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
+
 function App() {
+
+
   return (
-    <div className="h-screen bg-[#050816] flex items-center justify-center">
-      <h1 className="text-6xl font-bold text-purple-500">
-        Portfolio Started 🚀
-      </h1>
-    </div>
+    <>
+      <Navbar />
+
+      <Hero />
+
+      <About />
+
+      <Skills />
+
+      <Projects />
+
+      <Experience />
+
+      <Contact />
+
+      <Footer />
+    </>
   );
 }
 
