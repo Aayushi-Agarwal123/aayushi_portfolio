@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-
+import { useState, useEffect } from "react";
 
 import Navbar from "./components/Navbar";
+import Loader from "./components/Loader";
 
 import Hero from "./sections/Hero";
 import About from "./sections/About";
@@ -11,26 +11,40 @@ import Experience from "./sections/Experience";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
 
+import ScrollProgress from "./sections/ScrollProgress";
+import CursorGlow from "./sections/CursorGlow";
+import LoadingScreen from "./Sections/LoadingScreen";
+
 function App() {
 
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1800);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <>
+      <CursorGlow />
+      <ScrollProgress />
+
       <Navbar />
-
       <Hero />
-
       <About />
-
       <Skills />
-
       <Projects />
-
       <Experience />
-
       <Contact />
-
       <Footer />
+      <LoadingScreen />
     </>
   );
 }

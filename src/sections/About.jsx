@@ -1,10 +1,4 @@
 import "./About.css";
-import {
-  FaCode,
-  FaLaptopCode,
-  FaBrain,
-  FaAward,
-} from "react-icons/fa";
 import { motion } from "framer-motion";
 import { fadeUp } from "../utils/animations";
 
@@ -26,90 +20,119 @@ function About() {
         </h2>
 
         <p className="section-desc">
-          I love creating modern web applications that combine beautiful
-          design, clean code, and real-world functionality.
+          Passionate about building modern web applications, AI-powered
+          solutions and scalable software with clean UI and real-world impact.
         </p>
       </div>
 
       <div className="about-content">
 
+        {/* LEFT */}
+
         <motion.div
-          className="about-text-card"
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: .7 }}
+          className="about-left"
+          initial={{ opacity: 0, x: -80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
           viewport={{ once: true }}
         >
-          <h3>Hello 👋</h3>
+
+          <span className="about-subtitle">
+            WHO I AM
+          </span>
+
+          <h2>
+            Software Engineer
+            <br />
+            <span>& AI Enthusiast</span>
+          </h2>
 
           <p>
-            I'm <span>Aayushi Agarwal</span>, a passionate
-            <span> Full Stack Developer</span> pursuing B.Tech in Computer
-            Science Engineering.
+            I'm <strong>Aayushi Agarwal</strong>, a Computer Science undergraduate
+            passionate about developing scalable web applications, intelligent
+            software and modern digital experiences.
           </p>
 
           <p>
-            I enjoy transforming ideas into modern web applications using
-            React, Node.js, MongoDB and exploring AI-powered solutions.
+            I enjoy transforming ideas into production-ready applications using
+            React, Node.js, Python and cloud technologies while continuously
+            learning AI and software engineering best practices.
           </p>
 
-          <p>
-            My goal is to build scalable, user-friendly products while
-            continuously learning new technologies.
-          </p>
+          <div className="about-focus">
+            <span>⚛ React</span>
+            <span>🚀 Node.js</span>
+            <span>🤖 AI</span>
+            <span>☁ Cloud</span>
+            <span>🐍 Python</span>
+            <span>💾 MongoDB</span>
+          </div>
+
+        </motion.div>
+
+        {/* RIGHT */}
+
+        <motion.div
+          className="about-right"
+          initial={{ opacity: 0, x: 80 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+        >
+
+          <div className="info-card">
+
+            <h3>Education</h3>
+
+            <p>B.Tech Computer Science Engineering</p>
+
+            <small>AKTU • Expected Graduation 2027</small>
+
+          </div>
+
+          <div className="info-card">
+
+            <h3>Current Focus</h3>
+
+            <ul>
+  <li>🚀 AI Powered Applications</li>
+  <li>💻 Full Stack Development</li>
+  <li>☁️ Cloud Computing</li>
+  <li>🧠 Problem Solving</li>
+</ul>
+
+          </div>
+
         </motion.div>
 
       </div>
 
       <div className="about-grid">
 
-        <motion.div
-          className="about-card"
-          whileHover={{ y: -12 }}
-        >
-          <FaCode />
+        <div className="about-card">
+          <h2>2+</h2>
+          <span>Projects</span>
+        </div>
 
-          <h3>10+</h3>
+        <div className="about-card">
+          <h2>10+</h2>
+          <span>Technologies</span>
+        </div>
 
-          <p>Technologies</p>
-        </motion.div>
+        <div className="about-card">
+          <h2>2</h2>
+          <span>Hackathons</span>
+        </div>
 
-        <motion.div
-          className="about-card"
-          whileHover={{ y: -12 }}
-        >
-          <FaLaptopCode />
-
-          <h3>5+</h3>
-
-          <p>Projects</p>
-        </motion.div>
-
-        <motion.div
-          className="about-card"
-          whileHover={{ y: -12 }}
-        >
-          <FaBrain />
-
-          <h3>AI & Cloud</h3>
-
-          <p>Continuous Learner</p>
-        </motion.div>
-
-        <motion.div
-          className="about-card"
-          whileHover={{ y: -12 }}
-        >
-          <FaAward />
-
-          <h3>2</h3>
-
-          <p>Hackathons</p>
-        </motion.div>
+        <div className="about-card">
+          <h2>AI</h2>
+          <span>Focused</span>
+        </div>
 
       </div>
+
     </motion.section>
   );
 }
 
-export default About; 
+export default About;

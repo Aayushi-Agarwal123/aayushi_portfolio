@@ -1,5 +1,10 @@
 import "./Footer.css";
-import { FaGithub, FaLinkedin, FaArrowUp } from "react-icons/fa";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaEnvelope,
+  FaArrowUp,
+} from "react-icons/fa";
 
 function Footer() {
   return (
@@ -10,7 +15,7 @@ function Footer() {
         <h2>Aayushi Agarwal</h2>
 
         <p>
-          Full Stack Developer • AI Enthusiast • Cloud Learner
+          Full Stack Developer • AI Enthusiast • Building modern digital experiences.
         </p>
 
         <div className="footer-social">
@@ -31,20 +36,26 @@ function Footer() {
             <FaLinkedin />
           </a>
 
+          <a href="mailto:aayushia971@gmail.com">
+            <FaEnvelope />
+          </a>
+
         </div>
 
-        <a href="#hero" className="back-top">
-          <FaArrowUp />
-        </a>
+        <div className="footer-line"></div>
 
         <p className="copyright">
-          © {new Date().getFullYear()} Aayushi Agarwal. All Rights Reserved.
+          © 2026 Aayushi Agarwal. Crafted with React, Framer Motion & ❤️
         </p>
 
       </div>
+
+      <a href="#hero" className="scroll-top">
+        <FaArrowUp />
+      </a>
 
     </footer>
   );
 }
 
-export default Footer;
+export default Footer;  

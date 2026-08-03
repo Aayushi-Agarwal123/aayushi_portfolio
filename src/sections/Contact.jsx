@@ -4,13 +4,16 @@ import {
   FaEnvelope,
   FaGithub,
   FaLinkedin,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
+<section id="contact" className="contact" data-aos="fade-left"></section>
 
 function Contact() {
 
   const [result, setResult] = useState("");
 
   const onSubmit = async (event) => {
+
     event.preventDefault();
 
     setResult("Sending...");
@@ -22,134 +25,206 @@ function Contact() {
       "5f5974a4-6a6f-4f08-969d-d7f505164d3e"
     );
 
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
-    });
+    const response = await fetch(
+      "https://api.web3forms.com/submit",
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
 
     const data = await response.json();
 
     if (data.success) {
-      setResult("Message sent successfully! ✅");
+
+      setResult("Message sent successfully ✅");
+
       event.target.reset();
+
     } else {
+
       setResult("Something went wrong ❌");
+
     }
+
   };
 
   return (
-    <section id="contact" className="contact" data-aos="fade-up">
 
-      <div className="contact-header">
-        <h2 className="section-title">
-          Let's Create Something Meaningful
-        </h2>
+<section
+id="contact"
+className="contact"
+data-aos="fade-up"
+>
 
-        <p className="contact-subtitle">
-          I'm passionate about building modern web applications and AI-powered
-          solutions. Whether it's a collaboration, internship, or full-time
-          opportunity, I'd love to hear from you.
-        </p>
-      </div>
+<div className="contact-header">
 
-      <div className="contact-container">
+<span className="section-tag">
+LET'S CONNECT
+</span>
 
-        {/* Left Side */}
+<h2 className="section-title">
 
-        <div className="contact-info">
+Let's Build Something
+<br />
 
-          <div className="contact-card">
-            <FaEnvelope className="contact-icon" />
+<span>Amazing Together</span>
 
-            <div>
-              <h3>Email</h3>
+</h2>
 
-              <a href="mailto:aayushia971@gmail.com">
-                aayushia971@gmail.com
-              </a>
-            </div>
-          </div>
+<p className="contact-subtitle">
 
-          <div className="contact-card">
-            <FaGithub className="contact-icon" />
+I'm actively looking for Software Engineering,
+Full Stack Development,
+AI and Cloud opportunities.
+Whether it's an internship,
+apprenticeship or collaboration,
+I'd love to connect.
 
-            <div>
-              <h3>GitHub</h3>
+</p>
 
-              <a
-                href="https://github.com/Aayushi-Agarwal123"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                github.com/Aayushi-Agarwal123
-              </a>
-            </div>
-          </div>
+</div>
 
-          <div className="contact-card">
-            <FaLinkedin className="contact-icon" />
+<div className="contact-container">
 
-            <div>
-              <h3>LinkedIn</h3>
+{/* LEFT */}
 
-              <a
-                href="https://www.linkedin.com/in/aayushi-agarwal-961a47333"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View LinkedIn Profile
-              </a>
-            </div>
-          </div>
+<div className="contact-info">
 
-          <a
-            href="/Aayushi_Agarwal_Resume.pdf"
-            className="resume-btn"
-            download
-          >
-            Download Resume
-          </a>
+<div className="contact-card">
 
-        </div>
+<FaEnvelope className="contact-icon"/>
 
-        {/* Right Side */}
+<div>
 
-        <form className="contact-form" onSubmit={onSubmit}>
+<h3>Email</h3>
 
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            required
-          />
+<a href="mailto:aayushia971@gmail.com">
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            required
-          />
+aayushia971@gmail.com
 
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Your Message"
-            required
-          />
+</a>
 
-          <button type="submit">
-            Send Message →
-          </button>
+</div>
 
-          <p className="form-result">
-            {result}
-          </p>
+</div>
 
-        </form>
+<div className="contact-card">
 
-      </div>
+<FaLinkedin className="contact-icon"/>
 
-    </section>
+<div>
+
+<h3>LinkedIn</h3>
+
+<a
+href="https://www.linkedin.com/in/aayushi-agarwal-961a47333"
+target="_blank"
+rel="noreferrer"
+>
+
+View Profile
+
+</a>
+
+</div>
+
+</div>
+
+<div className="contact-card">
+
+<FaGithub className="contact-icon"/>
+
+<div>
+
+<h3>GitHub</h3>
+
+<a
+href="https://github.com/Aayushi-Agarwal123"
+target="_blank"
+rel="noreferrer"
+>
+
+github.com/Aayushi-Agarwal123
+
+</a>
+
+</div>
+
+</div>
+
+<div className="contact-card">
+
+<FaMapMarkerAlt className="contact-icon"/>
+
+<div>
+
+<h3>Location</h3>
+
+<p>India</p>
+
+</div>
+
+</div>
+
+<a
+href="/Aayushi_Agarwal_Resume.pdf"
+download
+className="resume-btn"
+>
+
+⬇ Download Resume
+
+</a>
+
+</div>
+
+{/* RIGHT */}
+
+<form
+className="contact-form"
+onSubmit={onSubmit}
+>
+
+<input
+type="text"
+name="name"
+placeholder="Your Name"
+required
+/>
+
+<input
+type="email"
+name="email"
+placeholder="Your Email"
+required
+/>
+
+<textarea
+rows="6"
+name="message"
+placeholder="Write your message..."
+required
+/>
+
+<button type="submit">
+
+Send Message →
+
+</button>
+
+<p className="form-result">
+
+{result}
+
+</p>
+
+</form>
+
+</div>
+
+</section>
+
   );
 }
 

@@ -1,71 +1,367 @@
+.skills{
+    padding:120px 8%;
+    position:relative;
+    overflow:hidden;
+}
+
+.skills::before{
+    content:"";
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:radial-gradient(circle,
+        rgba(56,189,248,.12),
+        transparent 70%);
+    top:-180px;
+    left:-180px;
+    filter:blur(60px);
+    z-index:-1;
+}
+
+.skills::after{
+    content:"";
+    position:absolute;
+    width:550px;
+    height:550px;
+    background:radial-gradient(circle,
+        rgba(124,58,237,.12),
+        transparent 70%);
+    right:-220px;
+    bottom:-220px;
+    filter:blur(60px);
+    z-index:-1;
+}
+
 .skills-box{
 
-    margin-top:60px;
-
-    background:rgba(255,255,255,.05);
-
-    backdrop-filter:blur(20px);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:30px;
-
-    padding:40px;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:30px;
+    margin-top:70px;
 
 }
 
 .skill-row{
 
-    margin-bottom:35px;
+    position:relative;
+    overflow:hidden;
+
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(20px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    padding:35px;
+
+    transition:.4s;
 
 }
 
-.skill-row:last-child{
+.skill-row::before{
 
-    margin-bottom:0;
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        135deg,
+        transparent,
+        rgba(56,189,248,.12),
+        transparent
+    );
+
+    transform:translateX(-100%);
+    transition:.7s;
+
+}
+
+.skill-row:hover::before{
+
+    transform:translateX(100%);
+
+}
+
+.skill-row:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#38bdf8;
+
+    box-shadow:0 20px 45px rgba(56,189,248,.20);
 
 }
 
 .skill-row h3{
 
+    font-size:26px;
+
     color:white;
 
-    margin-bottom:18px;
+    margin-bottom:25px;
 
-    font-size:24px;
+    font-weight:700;
 
 }
 
 .skill-list{
 
     display:flex;
-
     flex-wrap:wrap;
-
-    gap:15px;
+    gap:18px;
 
 }
 
 .skill-list span{
 
-display:flex;
+    display:flex;
+    align-items:center;
+    gap:12px;
 
-align-items:center;
+    padding:14px 22px;
 
-gap:10px;
+    border-radius:999px;
 
-padding:12px 20px;
+    background:rgba(255,255,255,.05);
 
-border-radius:50px;
+    border:1px solid rgba(255,255,255,.08);
 
-background:rgba(255,255,255,.05);
+    color:#d1d5db;
 
-border:1px solid rgba(255,255,255,.08);
+    font-size:15px;
 
-color:#cbd5e1;
+    font-weight:500;
 
-transition:.35s;
+    transition:.35s;
 
-cursor:pointer;
+    cursor:pointer;
+
+}
+
+.skill-list span:hover{
+
+    background:#38bdf8;
+
+    border-color:#38bdf8;
+
+    color:white;
+
+    transform:translateY(-5px);
+
+    box-shadow:0 12px 30px rgba(56,189,248,.35);
+
+}
+
+.skill-list svg{
+
+    font-size:22px;
+
+    color:#38bdf8;
+
+    transition:.35s;
+
+}
+
+.skill-list span:hover svg{
+
+    color:white;
+
+}
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width:1100px){
+
+.skills-box{
+
+grid-template-columns:1fr;
+
+gap:25px;
+
+}
+
+}
+
+@media (max-width:768px){
+
+.skills{
+
+padding:90px 7%;
+
+}
+
+.skill-row{
+
+padding:28px;
+
+}
+
+.skill-row h3{
+
+font-size:22px;
+
+margin-bottom:20px;
+
+}
+
+.skill-list{
+
+gap:12px;
+
+}
+
+.skill-list span{
+
+padding:10px 16px;
+
+font-size:14px;
+
+}
+
+.skill-list svg{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:500px){
+
+.skill-row{
+
+padding:22px;
+
+}
+
+.skill-list{
+
+justify-content:center;
+
+}
+
+}
+
+/* ===========================
+   FLOAT ANIMATION
+=========================== */
+
+@keyframes skillFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-4px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.skill-row:hover .skill-list span{
+
+animation:skillFloat 2s ease-in-out infinite;
+
+}
+
+.skill-row:hover .skill-list span:nth-child(2){
+
+animation-delay:.1s;
+
+}
+
+.skill-row:hover .skill-list span:nth-child(3){
+
+animation-delay:.2s;
+
+}
+
+.skill-row:hover .skill-list span:nth-child(4){
+
+animation-delay:.3s;
+
+}
+
+.skill-row:hover .skill-list span:nth-child(5){
+
+animation-delay:.4s;
+
+}
+
+/* ===========================
+   TITLE DECORATION
+=========================== */
+
+.skill-row h3::after{
+
+content:"";
+
+display:block;
+
+width:60px;
+
+height:4px;
+
+margin-top:10px;
+
+border-radius:20px;
+
+background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+
+}
+
+/* ===========================
+   GLASS GLOW
+=========================== */
+
+.skill-row::after{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:radial-gradient(circle,
+rgba(56,189,248,.18),
+transparent 70%);
+
+right:-70px;
+
+top:-70px;
+
+opacity:0;
+
+transition:.4s;
+
+pointer-events:none;
+
+}
+
+.skill-row:hover::after{
+
+opacity:1;
+
+}
+
+/* ===========================
+   SMOOTH TRANSITIONS
+=========================== */
+
+.skill-row,
+.skill-list span,
+.skill-list svg{
+
+transition:all .35s ease;
 
 }

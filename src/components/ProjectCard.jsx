@@ -1,41 +1,42 @@
 import "./ProjectCard.css";
 import { FaGithub } from "react-icons/fa";
 import { FiExternalLink } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 function ProjectCard({ project }) {
   return (
-    <div
-  className="project-card"
-  onMouseMove={(e) => {
-    const card = e.currentTarget;
-    const rect = card.getBoundingClientRect();
+    <motion.div
+      className="project-card"
+      initial={{ opacity: 0, y: 60 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      whileHover={{
+        y: -12,
+        scale: 1.02,
+      }}
+    >
 
-    card.style.setProperty(
-      "--x",
-      `${e.clientX - rect.left}px`
-    );
-
-    card.style.setProperty(
-      "--y",
-      `${e.clientY - rect.top}px`
-    );
-  }}
->
+      {/* Project Image */}
 
       <div className="project-image">
         <img
           src={project.image}
           alt={project.title}
-/>
+        />
+
+        <div className="image-overlay">
+          <span>{project.status}</span>
+        </div>
       </div>
+
+      {/* Content */}
 
       <div className="project-content">
 
-        <span className={`status ${project.status.toLowerCase().replace(/\s+/g, "-")}`}>
-          {project.status}
-        </span>
-
         <h3>{project.title}</h3>
+
+        <div className="project-line"></div>
 
         <p>{project.description}</p>
 
@@ -75,7 +76,7 @@ function ProjectCard({ project }) {
 
       </div>
 
-    </div>
+    </motion.div>
   );
 }
 

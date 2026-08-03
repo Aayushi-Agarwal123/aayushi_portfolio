@@ -5,10 +5,12 @@ import { motion } from "framer-motion";
 import Buttons from "../components/Buttons";
 import SocialLinks from "../components/SocialLinks";
 import Avatar from "../components/Avatar";
+import "./HeroParticles";
+
 
 function Hero() {
   return (
-    <section id="hero" className="hero" data-aos="fade-right">
+    <section id="hero" className="hero" data-aos="fade-up">
         <div className="blur blur1"></div>
         <div className="blur blur2"></div>
         <div className="grid-bg"></div>
@@ -31,7 +33,7 @@ function Hero() {
 
   <div className="hero-badge">
     <span className="status-dot"></span>
-    Available for Full-Time & Internship Opportunities
+    Open to Software Engineering • Full Stack • AI Opportunities
   </div>
 
   <p className="hero-small">
@@ -45,29 +47,34 @@ function Hero() {
   </h1>
 
   <div className="hero-type">
-    <TypeAnimation
-      sequence={[
-        "Full Stack Developer",
-        2000,
-        "Building AI Powered Applications",
-        2000,
-        "React • Node • Python",
-        2000,
-        "Cloud & Modern Web",
-        2000,
-      ]}
-      wrapper="span"
-      speed={55}
-      repeat={Infinity}
-    />
+   <TypeAnimation
+  sequence={[
+    "Full Stack Developer",
+    1800,
+    "AI Application Developer",
+    1800,
+    "React • Node • Python",
+    1800,
+    "Building Intelligent Products",
+    1800,
+    "Cloud & Modern Web",
+    1800,
+  ]}
+  wrapper="span"
+  speed={55}
+  repeat={Infinity}
+/>   
+  
   </div>
 
 </div>
 
         <p className="description">
-          Passionate Full Stack Developer focused on building modern web applications, AI-powered solutions, and scalable digital experiences. I enjoy turning ideas into elegant, user-friendly products while continuously learning new technologies.
-        </p>
-
+  I build modern, scalable and AI-powered web applications with a strong
+  focus on performance, clean architecture and delightful user experience.
+  Passionate about transforming innovative ideas into impactful digital
+  products through React, Node.js, Python and Cloud technologies.
+</p>
         <Buttons />
 
           
@@ -89,9 +96,11 @@ function Hero() {
     
 
       </motion.div>
+      
 
     </section>
   );
 }
 
+   
 export default Hero;

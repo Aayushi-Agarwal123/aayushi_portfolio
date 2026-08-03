@@ -1,0 +1,33 @@
+.loader-name{
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:3px;
+  color:white;
+  margin-bottom:30px;
+  text-transform:uppercase;
+}
+
+.loader-bar{
+  width:180px;
+  height:4px;
+  background:rgba(255,255,255,.08);
+  border-radius:50px;
+  overflow:hidden;
+}
+
+.loader-bar span{
+  display:block;
+  width:40%;
+  height:100%;
+  background:linear-gradient(90deg,#38bdf8,#8b5cf6);
+  animation:loading 1.2s infinite;
+}
+
+@keyframes loading{
+  from{
+    transform:translateX(-100%);
+  }
+  to{
+    transform:translateX(350%);
+  }
+}
